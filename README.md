@@ -1,1 +1,1 @@
-# setplex-wp
+# Setplex Wordpress Project
