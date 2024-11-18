@@ -1,0 +1,32 @@
+{
+  "name": "setplex",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "lint": "stylelint 'source/scss/**/*.scss'",
+    "lint:fix": "stylelint 'source/scss/**/*.scss' --fix",
+    "build": "npm run lint:fix && vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "postcss-lit": "^1.1.1",
+    "prettier": "^3.3.3",
+    "prettier-stylelint": "^0.4.2",
+    "sass-embedded": "^1.81.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.2",
+    "vite": "^5.4.10",
+    "vite-plugin-stylelint": "^5.3.1"
+  },
+  "dependencies": {
+    "sass": "^1.81.0"
+  }
+}

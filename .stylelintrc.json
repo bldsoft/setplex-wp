@@ -1,0 +1,15 @@
+{ "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-idiomatic-order",
+    "stylelint-prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "customSyntax": "postcss-lit"
+    }
+  ],
+  "rules": {
+    "color-hex-length": "short"
+  }
+}
