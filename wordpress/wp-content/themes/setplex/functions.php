@@ -207,3 +207,12 @@ add_action( 'admin_init', function() {
 add_filter( 'comments_open', '__return_false', 20, 2 );
 add_filter( 'pings_open', '__return_false', 20, 2 );
 add_filter( 'comments_array', '__return_empty_array', 10, 2 );
+
+/**
+ * Website Optimization
+ */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // Removes scripts to support emoji
+remove_action( 'wp_print_styles', 'print_emoji_styles' ); // Removes styles to support emoji
+remove_action( 'wp_head', 'index_rel_link' ); // Removing index page link to minify <head>
+remove_action( 'wp_head', 'wlwmanifest_link' ); // Uninstall Windows Live Writer (WLW) Manifest
+define( 'WP_POST_REVISIONS', 10 ); // Save only 5 revisions
