@@ -3,11 +3,20 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 import stylelint from 'vite-plugin-stylelint';
 import postcssImport from 'postcss-import';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   root: path.resolve(__dirname, 'source'), // Source files for developing
   plugins: [
     stylelint({ fix: true }), // Add stylelint: autocorrect errors
+    viteStaticCopy({
+      targets: [
+        {
+          src: path.resolve(__dirname, 'source/favicon'),
+          dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex'),
+        }
+      ]
+    })
   ],
   css: {
     postcss: {
@@ -22,8 +31,8 @@ export default defineConfig({
     emptyOutDir: true, // Delete old files before build
     rollupOptions: {
       input: {
-        mainjs: path.resolve(__dirname, 'source/js/main.js'),
-        maincss: path.resolve(__dirname, 'source/scss/main.scss'),
+        // mainjs: path.resolve(__dirname, 'source/js/main.js'),
+        // maincss: path.resolve(__dirname, 'source/scss/main.scss'),
         basecss: path.resolve(__dirname, 'source/scss/set-base.scss'),
       },
       output: {
