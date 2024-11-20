@@ -169,3 +169,41 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Website Security and Protection
+ */
+remove_action( 'wp_head', 'wp_generator' ); // hides the site version
+remove_action( 'wp_head', 'rsd_link' ); // Убирает ссылку на XML-RPC из <head> вашего сайта (но не отключает сам XML-RPC).
+add_filter( 'xmlrpc_enabled', '__return_false' ); // Отключает сам XML-RPC, блокируя все попытки доступа к xmlrpc.php.
+// Disable jQuery Migrate Loading
+add_action( 'wp_default_scripts', function( $scripts ) {
+	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+			$scripts->registered['jquery']->deps = array_diff(
+					$scripts->registered['jquery']->deps,
+					[ 'jquery-migrate' ]
+			);
+	}
+});
+// Disabling the author's link can be used to collect information about users (for example, for brute-force attacks).
+add_filter( 'author_link', '__return_false' );
+add_filter( 'redirect_canonical', function( $redirect_url ) {
+    if ( is_author() ) {
+        return false;
+    }
+    return $redirect_url;
+});
+// Adding headers to protect against XSS, clickjacking and other attacks.
+add_action( 'send_headers', function() {
+	header( 'X-Content-Type-Options: nosniff' );
+	header( 'X-Frame-Options: SAMEORIGIN' );
+	header( 'X-XSS-Protection: 1; mode=block' );
+	header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload' );
+});
+// Disabling comments
+add_action( 'admin_init', function() {
+	remove_menu_page( 'edit-comments.php' );
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+});
+add_filter( 'comments_open', '__return_false', 20, 2 );
+add_filter( 'pings_open', '__return_false', 20, 2 );
+add_filter( 'comments_array', '__return_empty_array', 10, 2 );
