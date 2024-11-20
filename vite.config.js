@@ -24,6 +24,7 @@ export default defineConfig({
       input: {
         mainjs: path.resolve(__dirname, 'source/js/main.js'),
         maincss: path.resolve(__dirname, 'source/scss/main.scss'),
+        basecss: path.resolve(__dirname, 'source/scss/set-base.scss'),
       },
       output: {
         entryFileNames: 'js/[name].min.js', // for JS-files
