@@ -14,7 +14,11 @@ export default defineConfig({
         {
           src: path.resolve(__dirname, 'source/favicon'),
           dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex'),
-        }
+        },
+        {
+          src: path.resolve(__dirname, 'source/img/**/*'), // img
+          dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex/img'), // Путь относительно outDir
+        },
       ]
     })
   ],
@@ -27,8 +31,8 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex/assets'), // Path to WordPress for files
-    emptyOutDir: true, // Delete old files before build
+    outDir: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex'), // Path to WordPress for files
+    emptyOutDir: false, // Don't delete old files before build
     rollupOptions: {
       input: {
         // mainjs: path.resolve(__dirname, 'source/js/main.js'),
