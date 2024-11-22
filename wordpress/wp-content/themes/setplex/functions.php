@@ -21,10 +21,8 @@ if ( ! defined( '_S_VERSION' ) ) {
  */
 function setplex_setup() {
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Setplex, use a find and replace
-		* to change 'setplex' to the name of your theme in all the template files.
+		* Registration of Translations.
+		* site https://po2mo.ru/ to create .mo file
 		*/
 	load_theme_textdomain( 'setplex', get_template_directory() . '/languages' );
 

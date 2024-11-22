@@ -1,0 +1,5 @@
+msgid "Our Solutions"
+msgstr "Nuestras soluciones"
+
+msgid "Submit"
+msgstr "Enviar"
