@@ -1,0 +1,9 @@
+@use "../base/config" as cnfg;
+
+.top-alert-bar {
+  position: relative;
+  z-index: 50;
+  height: 45px;
+  padding: cnfg.$pad-cont;
+  background-color: cnfg.$brand-blue;
+}

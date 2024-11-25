@@ -21,10 +21,10 @@ $breakpoints: (
 }
 
 // Example
-.class {
-  font-size: 16px; // mobile
+// .class {
+//   font-size: 16px; // mobile
 
-  @include respond-to(tablet) {
-    font-size: 20px; // 768px+
-  }
-}
+//   @include respond-to(tablet) {
+//     font-size: 20px; // 768px+
+//   }
+// }

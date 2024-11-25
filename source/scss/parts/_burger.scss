@@ -1,0 +1,77 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.burger {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  color: cnfg.$white;
+  cursor: pointer;
+
+  @include respond-to(desktop) {
+    display: none;
+  }
+
+  span {
+    top: 50%;
+    display: inline-block;
+
+    &,
+    &::after,
+    &::before {
+      position: absolute;
+      width: 23px;
+      height: 2.3px;
+      border-radius: cnfg.$border-radius6;
+      background-color: cnfg.$white;
+      content: "";
+      transition: all cnfg.$transition3 cubic-bezier(0.75, 0, 0.25, 1.25);
+    }
+
+    &::after {
+      top: 8px;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    @include respond-to(tablet) {
+      &,
+      &::after,
+      &::before {
+        width: 26px;
+      }
+
+      &::after {
+        top: 10px;
+      }
+
+      &::before {
+        top: -10px;
+      }
+    }
+
+    .mm-o & {
+      height: 2.5px;
+      transform: rotate(45deg);
+    }
+
+    .mm-o &::before {
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+
+    .mm-o &::after {
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      transform: rotate(90deg);
+    }
+  }
+}

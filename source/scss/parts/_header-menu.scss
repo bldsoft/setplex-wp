@@ -1,0 +1,121 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.header-nav-list {
+  display: flex;
+  font-weight: cnfg.$font-weight5;
+  gap: 28px;
+
+  > .menu-item {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    > a {
+      padding: 3px 2px;
+      color: cnfg.$white;
+      cursor: default;
+      text-decoration: none;
+    }
+
+    > .sub-menu-wrapper {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      overflow: hidden;
+      max-height: 0;
+      padding-top: 45px;
+      opacity: 0;
+      transform: translateY(0);
+      transition:
+        opacity cnfg.$transition2 ease-out,
+        transform cnfg.$transition2 ease-out,
+        max-height cnfg.$transition3 ease;
+      visibility: hidden;
+
+      .sub-menu {
+        display: flex;
+        min-width: 330px;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: cnfg.$border-radius15;
+        background-color: cnfg.$black;
+        gap: 19px;
+
+        &-heading {
+          color: cnfg.$white;
+          font-weight: cnfg.$font-weight7;
+        }
+      }
+
+      .menu-item {
+        border: 1px solid #262626;
+        border-radius: cnfg.$border-radius6;
+        background-color: cnfg.$brand-dark;
+        transition: background-color cnfg.$transition2 linear;
+
+        @include respond-to(desktop) {
+          &:hover {
+            background-color: cnfg.$brand-dark-hover;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        padding: 15px 15px 15px 35px;
+        color: cnfg.$white;
+        text-decoration: none;
+      }
+    }
+
+    &:first-child > .sub-menu-wrapper .sub-menu {
+      padding: 60px 20px 20px;
+    }
+
+    @include respond-to(desktop) {
+      &:hover {
+        .sub-menu-wrapper {
+          z-index: 10;
+          overflow: visible;
+          opacity: 1;
+          transform: translateY(20px);
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.menu-chevron-icon {
+  width: 12px;
+  height: 9px;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+
+  @include respond-to(desktop) {
+    width: 10px;
+    height: 7px;
+
+    .menu-item-has-children:hover > & {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* Add additional text at menu to class .addit-text-menu */
+.addit-text-menu[data-text]::after {
+  position: absolute;
+  top: -40px;
+  display: block;
+  margin-bottom: 10px; /* Расстояние между текстом и пунктами меню */
+  color: cnfg.$white;
+  content: attr(data-text);
+  font-weight: cnfg.$font-weight7;
+}

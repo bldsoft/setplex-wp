@@ -16,8 +16,8 @@ export default defineConfig({
           dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex'),
         },
         {
-          src: path.resolve(__dirname, 'source/img/**/*'), // img
-          dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex/img'), // Путь относительно outDir
+          src: path.resolve(__dirname, 'source/img/*'),
+          dest: path.resolve(__dirname, 'wordpress/wp-content/themes/setplex/img'),
         },
       ]
     })
@@ -35,7 +35,7 @@ export default defineConfig({
     emptyOutDir: false, // Don't delete old files before build
     rollupOptions: {
       input: {
-        // mainjs: path.resolve(__dirname, 'source/js/main.js'),
+        basejs: path.resolve(__dirname, 'source/js/base.js'),
         // maincss: path.resolve(__dirname, 'source/scss/main.scss'),
         basecss: path.resolve(__dirname, 'source/scss/set-base.scss'),
       },

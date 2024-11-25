@@ -1,0 +1,48 @@
+@use "../base/config" as cnfg;
+
+.nav-ic-0,
+.nav-ic-1,
+.nav-ic-2,
+.nav-ic-3,
+.nav-ic-4,
+.nav-ic-5 {
+  position: relative;
+
+  a {
+    padding-left: 20px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    display: inline-block;
+    width: 15px;
+    margin-right: 8px;
+    text-align: center;
+  }
+}
+
+.nav-ic-0::before {
+  content: url("/img/icons/icon-nav-ic.svg");
+}
+
+.nav-ic-1::before {
+  content: url("/img/icons/icon-nav-ic-1.svg");
+}
+
+.nav-ic-2::before {
+  content: url("/img/icons/icon-nav-ic-2.svg");
+}
+
+.nav-ic-3::before {
+  content: url("/img/icons/icon-nav-ic-3.svg");
+}
+
+.nav-ic-4::before {
+  content: url("/img/icons/icon-nav-ic-4.svg");
+}
+
+.nav-ic-5::before {
+  content: url("/img/icons/icon-nav-ic-5.svg");
+}

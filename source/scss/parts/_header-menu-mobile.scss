@@ -1,0 +1,66 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.menu-mobile {
+  position: absolute;
+  z-index: 15;
+  top: cnfg.$height-header;
+  left: 100vw;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  padding: 0;
+  background-color: cnfg.$black;
+  overflow-y: scroll;
+  transition: all ease 0.3s;
+  visibility: hidden;
+
+  .mm-o & {
+    left: 0;
+    visibility: visible;
+  }
+}
+
+.mm-o {
+  .header-logo,
+  .header-btn {
+    z-index: 50;
+  }
+}
+
+.header-nav-list-mobile {
+  flex-direction: column;
+  padding: 20px;
+  gap: 0;
+
+  > .menu-item {
+    flex-wrap: wrap;
+    padding: 8px 0;
+    border-bottom: 1px solid cnfg.$brand-blue;
+    background-color: cnfg.$black;
+
+    .menu-chevron-icon.rotated + .sub-menu-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: 0;
+      opacity: 1;
+      visibility: visible;
+
+      .sub-menu {
+        padding: 20px 0;
+      }
+    }
+
+    &:first-child > .menu-chevron-icon.rotated + .sub-menu-wrapper .sub-menu {
+      padding: 45px 0 20px;
+    }
+  }
+
+  > .menu-item.menu-item-has-children {
+    // padding: 8px 0 2px; according figma
+    padding: 12px 0 6px; // better view
+    background-color: cnfg.$black;
+  }
+}

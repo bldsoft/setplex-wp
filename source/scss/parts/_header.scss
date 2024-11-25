@@ -1,0 +1,50 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.header {
+  position: relative;
+  z-index: 50;
+  height: cnfg.$height-header;
+  padding: cnfg.$pad-cont;
+  border-bottom: 1px solid cnfg.$brand-blue;
+  background-color: cnfg.$brand-dark;
+
+  &-inner {
+    display: flex;
+    max-width: 1200px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &-logo img {
+    width: 120px;
+    height: 21px;
+
+    @include respond-to(tablet) {
+      width: 175px;
+      height: 30px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: cnfg.$font-weight7;
+
+    @include respond-to(desktop) {
+      padding: 9px 24px 8px;
+      font-size: 16px;
+    }
+  }
+}

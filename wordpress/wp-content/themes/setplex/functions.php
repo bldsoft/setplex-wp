@@ -47,7 +47,7 @@ function setplex_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'setplex' ),
+			'header_nav' => esc_html__( 'Header Nav', 'setplex' ),
 		)
 	);
 
@@ -136,7 +136,16 @@ add_action( 'widgets_init', 'setplex_widgets_init' );
  * Enqueue scripts and styles.
  */
 function setplex_scripts(){
-	wp_enqueue_style( 'base', get_template_directory_uri().'/assets/css/basecss.min.css', array(), _S_VERSION, 'all' );
+	// css
+	$css_base_file = get_template_directory() . '/css/basecss.min.css';
+	$css_base_url = get_template_directory_uri().'/css/basecss.min.css';
+
+	// js
+	$js_base_file = get_template_directory() . '/js/basejs.min.js';
+	$js_base_url = get_template_directory_uri() . '/js/basejs.min.js';
+
+	wp_enqueue_style( 'base-style', $css_base_url, array(), filemtime($css_base_file), 'all' );
+	wp_enqueue_script( 'base-js', $js_base_url, array(), filemtime($js_base_file), true );
 }
 add_action( 'wp_enqueue_scripts', 'setplex_scripts' );
 
@@ -164,6 +173,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // Expanding the capabilities of the admin panel
 require get_template_directory() . '/inc/extras.php';
 
+// Features that improve the menu
+require get_template_directory() . '/inc/template-menu.php';
 
 /**
  * Website Security and Protection

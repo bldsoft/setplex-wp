@@ -1,5 +1,29 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
 body {
   font-family: Poppins, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: cnfg.$font-weight4;
+}
+
+.container {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.show-desktop {
+  display: none;
+
+  @include respond-to(desktop) {
+    display: block;
+  }
+}
+
+.show-mobile {
+  display: block;
+
+  @include respond-to(desktop) {
+    display: none;
+  }
 }
