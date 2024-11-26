@@ -10,6 +10,7 @@
     }
   ],
   "rules": {
-    "color-hex-length": "short"
+    "color-hex-length": "short",
+    "scss/no-global-function-names": null
   }
 }

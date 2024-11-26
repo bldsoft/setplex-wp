@@ -1,0 +1,30 @@
+@use "sass:map";
+
+$breakpoints: (
+  init: 0,
+  mobile: 375px,
+  tablet: 768px,
+  desktop: 1024px,
+  desktop-xl: 1440px,
+);
+
+@mixin respond-to($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in the \$breakpoints map.";
+  }
+}
+
+// Example
+.class {
+  font-size: 16px; // mobile
+
+  @include respond-to(tablet) {
+    font-size: 20px; // 768px+
+  }
+}
