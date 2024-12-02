@@ -222,4 +222,3 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // Removes script
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); // Removes styles to support emoji
 remove_action( 'wp_head', 'index_rel_link' ); // Removing index page link to minify <head>
 remove_action( 'wp_head', 'wlwmanifest_link' ); // Uninstall Windows Live Writer (WLW) Manifest
-define( 'WP_POST_REVISIONS', 10 ); // Save only 5 revisions
