@@ -8,6 +8,8 @@
   width: 40px;
   height: 40px;
   justify-content: center;
+  border: 0;
+  background: none;
   color: cnfg.$white;
   cursor: pointer;
 
@@ -17,6 +19,7 @@
 
   span {
     top: 50%;
+    left: 4px;
     display: inline-block;
 
     &,
@@ -33,10 +36,12 @@
 
     &::after {
       top: 8px;
+      left: 0;
     }
 
     &::before {
       top: -8px;
+      left: 0;
     }
 
     @include respond-to(tablet) {

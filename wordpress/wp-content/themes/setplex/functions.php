@@ -146,6 +146,13 @@ function setplex_scripts(){
 
 	wp_enqueue_style( 'base-style', $css_base_url, array(), filemtime($css_base_file), 'all' );
 	wp_enqueue_script( 'base-js', $js_base_url, array(), filemtime($js_base_file), true );
+
+	// additional css
+	wp_enqueue_style( 'slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css', array(), '1.8.1' );
+	wp_enqueue_style( 'slick-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css', array('slick-css'), '1.8.1' );
+
+	// additional js
+	wp_enqueue_script( 'slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'setplex_scripts' );
 

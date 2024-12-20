@@ -28,9 +28,28 @@
 <?php wp_body_open(); ?>
 
 <div class="container">
-	<div class="top-alert-bar"></div>
+	<div class="top-alert-bar">
+		<div class="top-alert-bar-inner grd-inner">
+			<ul class="top-alert-bar-list">
+				<?php
+					$current_lang = get_current_language();
+					$top_alert_list_field = "top_alert_bar_{$current_lang}";
+				?>
+				<?php while (have_rows($top_alert_list_field, 'option')) : the_row(); ?>
+					<li>
+						<a class="top-alert-bar-list__item" href="<?php the_sub_field('link_slide'); ?>">
+							<?php the_sub_field('text_slide'); ?>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
+			<button class="top-alert-bar-close">
+				<span class="visually-hidden">Close</span>
+			</button>
+		</div>
+	</div>
 	<header class="header">
-		<div class="header-inner">
+		<div class="header-inner grd-inner">
 
 			<?php $logo_url = get_current_language() === 'es' ? get_site_url() . '/es/' : get_site_url(); ?>
 			<a class="header-logo" href="<?php echo esc_url( $logo_url ); ?>">
@@ -87,9 +106,9 @@
 				?>
 				<a href="<?php echo $contacts_link; ?>" class="header-btn blue-btn"><?php echo $contacts_text; ?></a>
 
-				<div class="burger">
+				<button class="burger">
 					<span></span>
-				</div>
+				</button>
 			</div>
 
 			<div class="menu-mobile show-mobile">

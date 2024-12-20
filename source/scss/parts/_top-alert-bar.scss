@@ -1,9 +1,77 @@
 @use "../base/config" as cnfg;
+@use "../base/sizes" as *;
 
 .top-alert-bar {
   position: relative;
   z-index: 50;
-  height: 45px;
+  top: 0;
+  height: 60px;
   padding: cnfg.$pad-cont;
   background-color: cnfg.$brand-blue;
+  transition: top cnfg.$transition3 ease;
+
+  @include respond-to(tablet) {
+    height: 45px;
+  }
+
+  &.hidden {
+    top: -50px;
+  }
+
+  &-inner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &-close {
+    position: relative;
+    width: 23px;
+    height: 23px;
+    padding: 5px;
+    border: 0;
+    margin-left: auto;
+    background: none;
+    cursor: pointer;
+    font-size: 0;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      width: 23px;
+      height: 2.3px;
+      border-radius: cnfg.$border-radius6;
+      background-color: cnfg.$white;
+      content: "";
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &-list {
+    max-width: calc(100% - 20px);
+  }
+
+  &-list__item {
+    color: cnfg.$white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    text-decoration: none;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
 }
