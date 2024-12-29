@@ -16,6 +16,10 @@
   transition: all ease 0.3s;
   visibility: hidden;
 
+  @include respond-to(desktop) {
+    display: none;
+  }
+
   .mm-o & {
     left: 0;
     visibility: visible;

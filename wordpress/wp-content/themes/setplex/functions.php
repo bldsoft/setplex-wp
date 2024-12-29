@@ -48,6 +48,10 @@ function setplex_setup() {
 	register_nav_menus(
 		array(
 			'header_nav' => esc_html__( 'Header Nav', 'setplex' ),
+			'footer_nav_1' => esc_html__( 'Footer #1', 'setplex'),
+			'footer_nav_2' => esc_html__( 'Footer #2', 'setplex'),
+			'footer_nav_3' => esc_html__( 'Footer #3', 'setplex'),
+			'footer_nav_4' => esc_html__( 'Footer #4', 'setplex'),
 		)
 	);
 
@@ -229,3 +233,18 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // Removes script
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); // Removes styles to support emoji
 remove_action( 'wp_head', 'index_rel_link' ); // Removing index page link to minify <head>
 remove_action( 'wp_head', 'wlwmanifest_link' ); // Uninstall Windows Live Writer (WLW) Manifest
+
+/*-----------------------------------------------------------------------------------*/
+/* ACF 6.2.5 Security Release
+/* Initially the update automatically escapes unsafe HTML when rendered using the_field or an ACF shortcode.
+/* These code disabling the new behavior.
+/* https://www.advancedcustomfields.com/blog/acf-6-2-5-security-release/#conditionally-disabling-the-new-behavior
+/*-----------------------------------------------------------------------------------*/
+
+add_filter( 'acf/shortcode/allow_unsafe_html', function ( $allowed, $atts ) {
+  return true;
+}, 10, 2 );
+
+add_filter( 'acf/the_field/allow_unsafe_html', function ( $allowed, $atts ) {
+  return true;
+}, 10, 2 );
