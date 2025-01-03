@@ -1,0 +1,48 @@
+@use "../base/config" as cnfg;
+
+.on-mobile-slider.slick-slider {
+  padding-bottom: 110px;
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: unset;
+    bottom: -15px;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #363636;
+    border-radius: 50%;
+    background: none;
+    font-weight: 600;
+
+    &::before {
+      color: cnfg.$brand-blue;
+      font-family: inherit;
+      font-size: 24px;
+      opacity: 1;
+    }
+
+    &.slick-disabled::before {
+      opacity: 0.5;
+    }
+  }
+
+  .slick-next {
+    right: 25px;
+  }
+
+  .slick-prev {
+    right: 100px;
+    left: unset;
+  }
+}
+
+.on-mobile-slider-no-arrow.slick-slider,
+.on-solutions-slider.slick-slider {
+  .slick-track {
+    display: flex;
+  }
+}

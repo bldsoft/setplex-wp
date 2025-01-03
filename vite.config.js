@@ -36,8 +36,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         basejs: path.resolve(__dirname, 'source/js/base.js'),
-        // maincss: path.resolve(__dirname, 'source/scss/main.scss'),
         basecss: path.resolve(__dirname, 'source/scss/set-base.scss'),
+        'front-page': path.resolve(__dirname, 'source/scss/front-page.scss'),
       },
       output: {
         entryFileNames: 'js/[name].min.js', // for JS-files

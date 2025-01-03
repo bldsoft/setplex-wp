@@ -1,0 +1,71 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.dragonfly {
+  &-section {
+    position: relative;
+    padding: 0 20px;
+    margin-top: 100px;
+  }
+
+  &-inner {
+    overflow: hidden;
+  }
+
+  &-list {
+    display: block;
+    margin: 30px 0 0 -16px;
+
+    @include respond-to(desktop) {
+      display: flex;
+      margin: 30px -16px 40px;
+    }
+  }
+
+  &-list-item {
+    height: auto;
+    flex: 1 0 auto;
+    color: cnfg.$white;
+
+    &.w-25 {
+      width: 25%;
+    }
+
+    &.w-33 {
+      width: 33%;
+    }
+
+    &-content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      padding: 29px 12px 29px 15px;
+      border: 1px solid cnfg.$brand-blue;
+      border-radius: cnfg.$border-radius15;
+      margin: 0 16px;
+      gap: 10px;
+    }
+
+    &-figure {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: cnfg.$font-weight7;
+      line-height: 23px;
+
+      @include respond-to(desktop) {
+        min-height: 50px;
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: cnfg.$font-weight4;
+      line-height: 25px;
+    }
+  }
+}

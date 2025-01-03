@@ -1,0 +1,150 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.pentagon {
+  &-section {
+    position: relative;
+    padding: 0 20px;
+    margin-top: 100px;
+  }
+
+  // &-inner {
+  // }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0 40px -13px;
+    row-gap: 27px;
+
+    @include respond-to(tablet) {
+      display: block;
+    }
+
+    @include respond-to(desktop) {
+      display: flex;
+      margin: 30px -13px 40px;
+    }
+
+    .nav-ic-1,
+    .nav-ic-2,
+    .nav-ic-3,
+    .nav-ic-4,
+    .nav-ic-5 {
+      &::before {
+        top: 2px;
+        left: 0;
+      }
+    }
+  }
+
+  &-list-item {
+    max-width: 410px;
+    height: auto;
+    flex: 1 0 auto;
+
+    &.w-33 {
+      width: 100%;
+
+      @include respond-to(desktop) {
+        width: 33%;
+      }
+    }
+
+    &-content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      padding: 25px 25px 30px;
+      border: 1px solid currentcolor;
+      border-radius: cnfg.$border-radius15;
+      margin: 0 13px;
+      gap: 10px;
+    }
+
+    &-logo {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        max-width: 190px;
+        height: fit-content;
+      }
+
+      &-text {
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: cnfg.$font-weight7;
+        line-height: 23px;
+        text-align: right;
+      }
+    }
+
+    &-figure {
+      margin: 0 -20px 10px;
+    }
+
+    &-title {
+      padding-left: 24px;
+      color: cnfg.$white;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 23px;
+    }
+
+    &-text {
+      color: cnfg.$white;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.4px;
+      line-height: 20px;
+    }
+
+    &-link {
+      width: 56px;
+      height: 36px;
+      padding: 8px;
+      border: none;
+      border-radius: 64px;
+      margin-top: auto;
+      margin-left: auto;
+      background-color: currentcolor;
+      color: inherit; // важно для наследования цвета
+      transition: background-color cnfg.$transition2;
+
+      .color-norago & {
+        background: linear-gradient(
+          119deg,
+          #fb5657 9.22%,
+          #27609c 55%,
+          #27609c 90%
+        );
+        background-size: 150% auto;
+        transition: background-position cnfg.$transition3;
+
+        &:hover {
+          background-position: right center;
+        }
+      }
+
+      .color-nora &:hover {
+        background-color: cnfg.$brand-nora-hover;
+      }
+
+      .color-setrix &:hover {
+        background-color: cnfg.$brand-setrix-hover;
+      }
+
+      .color-streampool &:hover {
+        background-color: cnfg.$brand-streampool-hover;
+      }
+
+      .color-analytics &:hover {
+        background-color: cnfg.$brand-analytics-hover;
+      }
+    }
+  }
+}

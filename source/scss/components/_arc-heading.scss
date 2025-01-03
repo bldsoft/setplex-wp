@@ -1,0 +1,99 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.arc-heading {
+  &-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-top: 100px;
+
+    @include respond-to(tablet) {
+      min-height: 630px;
+      padding: 0 20px;
+      margin-top: 0;
+    }
+
+    @include respond-to(desktop) {
+      min-height: 714px;
+    }
+  }
+
+  &-inner {
+    @include respond-to(tablet) {
+      margin: 100px auto 0;
+    }
+
+    &::before {
+      display: none;
+
+      @include respond-to(tablet) {
+        position: absolute;
+        top: 50%;
+        left: -350px;
+        display: block;
+        width: 707px;
+        height: 707px;
+        margin-top: -300px;
+        background-image: url("https://setplex.com/test/wp-content/themes/setplex/img/content/shevron.webp");
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+      }
+
+      @include respond-to(desktop) {
+        top: -120px;
+        left: -526px;
+        width: 1051px;
+        height: 1051px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-block {
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    margin-left: auto;
+
+    @include respond-to(tablet) {
+      max-width: 71%;
+    }
+
+    @include respond-to(desktop-xl) {
+      max-width: 83%;
+    }
+  }
+
+  &-head {
+    margin: 0 0 33px;
+    color: cnfg.$white;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+
+    @include respond-to(tablet) {
+      font-size: 32px;
+      line-height: 41px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 38px;
+      line-height: 50px;
+    }
+
+    @include respond-to(desktop-xl) {
+      font-size: 46px;
+      line-height: 60px;
+    }
+  }
+
+  &-text {
+    color: cnfg.$white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
