@@ -6,9 +6,13 @@
   z-index: 50;
   top: 0;
   height: cnfg.$height-header;
-  padding: cnfg.$pad-cont;
+  padding: 0 5px 0 20px;
   border-bottom: 1px solid cnfg.$brand-blue;
   background-color: cnfg.$brand-dark;
+
+  @include respond-to(desktop) {
+    padding: 0 15px 0 20px;
+  }
 
   &-inner {
     display: flex;

@@ -35,22 +35,54 @@
         max-height cnfg.$transition3 ease;
       visibility: hidden;
 
-      .sub-menu {
+      a {
+        display: block;
+        padding: 15px 15px 15px 35px;
+        color: cnfg.$white;
+        text-decoration: none;
+      }
+
+      > .sub-menu {
         display: flex;
         min-width: 330px;
         flex-direction: column;
         padding: 20px;
-        border-radius: cnfg.$border-radius15;
+        border-radius: 6px;
         background-color: cnfg.$black;
-        gap: 19px;
+        gap: 30px;
 
-        &-heading {
-          color: cnfg.$white;
-          font-weight: cnfg.$font-weight7;
+        .sub-menu {
+          display: flex;
+          min-width: 330px;
+          flex-direction: column;
+          padding: 0;
+          border-radius: cnfg.$border-radius15;
+          gap: 19px;
+
+          &-heading {
+            color: cnfg.$white;
+            font-weight: cnfg.$font-weight7;
+          }
+        }
+
+        @include respond-to(desktop) {
+          &:has(.menu-item.menu-item-has-children) {
+            flex-direction: row;
+          }
+        }
+
+        > .menu-item-has-children > a {
+          display: inline-block;
+          padding: 5px 15px 5px 5px;
         }
       }
 
-      .menu-item {
+      .menu-item > svg {
+        display: none;
+      }
+
+      .sub-menu-wrapper .menu-item,
+      > .sub-menu > .menu-item:not(.menu-item-has-children) {
         border: 1px solid #262626;
         border-radius: cnfg.$border-radius6;
         background-color: cnfg.$brand-dark;
@@ -62,24 +94,13 @@
           }
         }
       }
-
-      a {
-        display: block;
-        padding: 15px 15px 15px 35px;
-        color: cnfg.$white;
-        text-decoration: none;
-      }
-    }
-
-    &:first-child > .sub-menu-wrapper .sub-menu {
-      padding: 60px 20px 20px;
     }
 
     @include respond-to(desktop) {
       &:hover {
         .sub-menu-wrapper {
-          z-index: 10;
           overflow: visible;
+          padding-bottom: 20px;
           opacity: 1;
           transform: translateY(20px);
           visibility: visible;

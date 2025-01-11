@@ -26,23 +26,6 @@ document.querySelectorAll('.menu-mobile .menu-item-has-children').forEach((item)
   });
 });
 
-// additional text
-document.addEventListener('DOMContentLoaded', () => {
-  const language = document.documentElement.lang;
-  const subMenu = document.querySelector('.menu-item-7 .sub-menu');
-
-  if (!subMenu) {
-    return;
-  }
-
-  const translations = {
-    'en': 'Our Solutions',
-    'es': 'Nuestras Soluciones'
-  };
-
-  subMenu.setAttribute('data-text', translations[language] || 'Our Solutions');
-});
-
 // top-alert-bar
 document.addEventListener('DOMContentLoaded', function () {
   const closeButton = document.querySelector('.top-alert-bar-close');

@@ -42,20 +42,6 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( (array) $item->classes ), $item, $args ) );
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-			if (strpos($class_names, 'addit-text-menu') !== false) {
-					// Получаем текущий язык через Polylang
-					$current_language = pll_current_language();
-					$translations = [
-							'en' => 'Our Solutions',
-							'es' => 'Nuestras Soluciones',
-					];
-
-					$text = isset($translations[$current_language]) ? $translations[$current_language] : $translations['en'];
-
-					// Добавляем data-text атрибут в элемент <li> с классом addit-text-menu
-					$class_names .= ' data-text="' . esc_attr($text) . '"';
-			}
-
 			// Стандартное создание элемента меню
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';

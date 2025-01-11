@@ -49,16 +49,20 @@
       z-index: 1;
       width: 100%;
       padding-top: 0;
+      border-top: 1px solid #0a85ce;
+      margin-bottom: 20px;
       opacity: 1;
       visibility: visible;
 
       .sub-menu {
-        padding: 20px 0;
+        padding: 20px 0 0;
+        gap: 20px;
       }
     }
 
-    &:first-child > .menu-chevron-icon.rotated + .sub-menu-wrapper .sub-menu {
-      padding: 45px 0 20px;
+    &:first-child > .menu-chevron-icon.rotated + .sub-menu-wrapper > .sub-menu {
+      // padding: 45px 0 20px;
+      padding: 25px 0 0 25px;
     }
   }
 
