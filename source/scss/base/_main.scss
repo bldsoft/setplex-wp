@@ -5,6 +5,7 @@ body {
   font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: cnfg.$font-weight4;
+  overflow-x: hidden;
 }
 
 .container {
@@ -30,6 +31,10 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+section.no-top-indent {
+  margin-top: 10px;
 }
 
 .show-desktop {

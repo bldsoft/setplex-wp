@@ -172,6 +172,7 @@ function setplex_scripts(){
 	if (is_front_page()) {
 		wp_enqueue_style('front-page-style', $css_front_url, array(), filemtime($css_front_file), 'all' );
 	}
+	require get_template_directory() . '/inc/styles-to-pages.php';
 }
 add_action( 'wp_enqueue_scripts', 'setplex_scripts' );
 
