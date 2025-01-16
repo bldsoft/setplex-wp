@@ -1,0 +1,21 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.list-analytix-style {
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin: 2px 0;
+  }
+
+  li::before {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    display: inline-block;
+    width: 15px;
+    margin-right: 8px;
+    content: url("/img/icons/icon-nav-ic-4.svg");
+    text-align: center;
+  }
+}

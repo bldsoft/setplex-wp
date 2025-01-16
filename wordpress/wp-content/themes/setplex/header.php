@@ -27,7 +27,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<div class="container">
+<div class="container <?php if (get_field('cont_class')) { the_field('cont_class'); } ?>">
 	<div class="top-alert-bar">
 		<div class="top-alert-bar-inner grd-inner">
 			<ul class="top-alert-bar-list">

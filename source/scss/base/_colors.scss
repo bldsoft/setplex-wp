@@ -1,0 +1,71 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.page-type-blue {
+  color: cnfg.$brand-blue;
+
+  --color: #{cnfg.$brand-blue};
+}
+
+.page-type-nora {
+  color: cnfg.$brand-nora;
+
+  --hover-color: cnfg.$brand-nora-hover;
+}
+
+.page-type-setrix {
+  color: cnfg.$brand-setrix;
+
+  --hover-color: cnfg.$brand-setrix-hover;
+}
+
+.page-type-streampool {
+  color: cnfg.$brand-streampool;
+
+  --hover-color: cnfg.$brand-streampool-hover;
+}
+
+.page-type-analytix {
+  color: cnfg.$brand-analytix;
+
+  --hover-color: cnfg.$brand-analytix-hover;
+}
+
+.page-type-norago {
+  color: cnfg.$brand-norago;
+}
+
+.color-nora {
+  border-color: cnfg.$brand-nora;
+  color: cnfg.$brand-nora;
+
+  --hover-color: #{cnfg.$brand-nora-hover};
+}
+
+.color-setrix {
+  border-color: cnfg.$brand-setrix;
+  color: cnfg.$brand-setrix;
+
+  --hover-color: #{cnfg.$brand-setrix-hover};
+}
+
+.color-streampool {
+  border-color: cnfg.$brand-streampool;
+  color: cnfg.$brand-streampool;
+
+  --hover-color: #{cnfg.$brand-streampool-hover};
+}
+
+.color-analytix {
+  border-color: cnfg.$brand-analytix;
+  color: cnfg.$brand-analytix;
+
+  --hover-color: #{cnfg.$brand-analytix-hover};
+}
+
+.color-norago {
+  border-color: cnfg.$brand-norago;
+  color: cnfg.$brand-norago;
+
+  // --hover-color: #{cnfg.$brand-norago-hover};
+}

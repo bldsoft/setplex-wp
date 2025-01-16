@@ -108,7 +108,7 @@
       height: 36px;
       padding: 8px;
       border: none;
-      border-radius: 64px;
+      border-radius: cnfg.$border-radius64;
       margin-top: auto;
       margin-left: auto;
       background-color: currentcolor;
@@ -130,20 +130,11 @@
         }
       }
 
-      .color-nora &:hover {
-        background-color: cnfg.$brand-nora-hover;
-      }
-
-      .color-setrix &:hover {
-        background-color: cnfg.$brand-setrix-hover;
-      }
-
-      .color-streampool &:hover {
-        background-color: cnfg.$brand-streampool-hover;
-      }
-
-      .color-analytics &:hover {
-        background-color: cnfg.$brand-analytics-hover;
+      .color-nora &:hover,
+      .color-setrix &:hover,
+      .color-streampool &:hover,
+      .color-analytix &:hover {
+        background: var(--hover-color);
       }
     }
   }

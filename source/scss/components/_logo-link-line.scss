@@ -1,0 +1,142 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.logo-link-line {
+  &-list {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    padding: 0;
+    background: rgb(18 18 18 / 60%);
+    gap: 32px;
+    list-style-type: none;
+
+    @include respond-to(tablet) {
+      display: flex;
+      gap: 45px;
+    }
+  }
+
+  &-list-item {
+    padding: 5px 10px 10px;
+    margin: 0 10px;
+
+    @include respond-to(tablet) {
+      margin: 0;
+    }
+  }
+
+  &-list-item-link {
+    display: block;
+    height: 51px;
+    background-image: url("https://setplex.com/test/wp-content/themes/setplex/img/content/logo-link-line.svg");
+    background-repeat: no-repeat;
+    transition: background-image cnfg.$transition2;
+
+    &.img {
+      &-nrmd {
+        width: 80px;
+        background-position: 0 0;
+
+        &:hover,
+        &.active {
+          background-position: 0 -61px;
+        }
+      }
+
+      &-strx {
+        width: 96px;
+        background-position: -91px 0;
+
+        &:hover,
+        &.active {
+          background-position: -91px -61px;
+        }
+      }
+
+      &-strmp {
+        width: 157px;
+        background-position: -197px 0;
+
+        &:hover,
+        &.active {
+          background-position: -197px -61px;
+        }
+      }
+
+      &-anltx {
+        width: 112px;
+        background-position: -361px 0;
+
+        &:hover,
+        &.active {
+          background-position: -361px -61px;
+        }
+      }
+
+      &-nrg {
+        width: 134px;
+        background-position: -485px 0;
+
+        &:hover,
+        &.active {
+          background-position: -485px -61px;
+        }
+      }
+    }
+  }
+}
+
+.logo-link-line-slider {
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-list {
+    width: calc(100% - 60px);
+    margin: 0 0 0 auto;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 10;
+    top: 0;
+    width: 64px;
+    height: 100%;
+    transform: translate(0, 0);
+
+    &::before {
+      position: relative;
+      display: block;
+      width: 17px;
+      height: 28px;
+      background-image: url("/img/icons/icon-arrow-angle-2.svg");
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    background: linear-gradient(270deg, rgb(0 0 0 / 0%) 0%, #000 100%);
+
+    &::before {
+      left: 20px;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    background: linear-gradient(90deg, rgb(0 0 0 / 0%) 0%, #000 100%);
+
+    &::before {
+      right: -20px;
+      transform: rotate(180deg);
+    }
+  }
+}

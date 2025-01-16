@@ -1,0 +1,95 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.page-type-nora {
+  color: cnfg.$brand-nora;
+
+  --color: #{cnfg.$brand-nora};
+  --hover-color: #{cnfg.$brand-nora-hover};
+
+  // TODO: update to global variables
+  .on-mobile-slider.slick-slider .slick-prev::before,
+  .on-mobile-slider.slick-slider .slick-next::before {
+    color: cnfg.$brand-nora;
+  }
+}
+
+.page-type-setrix {
+  --color: #{cnfg.$brand-setrix};
+  --hover-color: #{cnfg.$brand-setrix-hover};
+
+  // TODO: update to global variables
+  .on-mobile-slider.slick-slider .slick-prev::before,
+  .on-mobile-slider.slick-slider .slick-next::before {
+    color: cnfg.$brand-setrix;
+  }
+}
+
+.page-type-streampool {
+  --color: #{cnfg.$brand-streampool};
+  --hover-color: #{cnfg.$brand-streampool-hover};
+
+  // TODO: update to global variables
+  .on-mobile-slider.slick-slider .slick-prev::before,
+  .on-mobile-slider.slick-slider .slick-next::before {
+    color: cnfg.$brand-streampool;
+  }
+
+  @include respond-to(desktop) {
+    .feature-list {
+      max-width: 1050px;
+      margin: 30px auto 0;
+    }
+
+    .feature-list-item.w-25 {
+      max-width: 350px;
+    }
+  }
+}
+
+.page-type-analytix {
+  --color: #{cnfg.$brand-analytix};
+  --hover-color: #{cnfg.$brand-analytix-hover};
+
+  // TODO: update to global variables
+  .on-mobile-slider.slick-slider .slick-prev::before,
+  .on-mobile-slider.slick-slider .slick-next::before {
+    color: cnfg.$brand-analytix;
+  }
+
+  @include respond-to(desktop) {
+    .feature-list {
+      max-width: 1050px;
+      margin: 30px auto 0;
+    }
+
+    .feature-list-item.w-25 {
+      max-width: 350px;
+    }
+  }
+}
+
+.page-type-norago {
+  --color: #{cnfg.$brand-norago};
+
+  // --hover-color: #{cnfg.$brand-norago-hover};
+
+  // TODO: update to global variables
+  .on-mobile-slider.slick-slider .slick-prev::before,
+  .on-mobile-slider.slick-slider .slick-next::before {
+    color: cnfg.$brand-norago;
+  }
+
+  .icon-logo-with-buttons-image {
+    position: relative;
+    top: unset;
+    right: unset;
+    max-width: unset;
+    height: auto;
+    align-self: baseline;
+  }
+
+  .icon-logo-with-buttons-content img {
+    height: 120px;
+  }
+}

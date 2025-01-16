@@ -24,11 +24,11 @@ get_header();
     loop 
     playsinline>
     <source 
-        src="https://setplex.com/test/wp-content/uploads/2025/01/main-video-desktop.mp4" 
+        src="<?php the_field('main_video_desktop'); ?>" 
         type="video/mp4" 
         media="(min-width: 769px)">
     <source 
-        src="https://setplex.com/test/wp-content/uploads/2025/01/main-video-mobile.mp4" 
+        src="<?php the_field('main_video_mobile'); ?>" 
         type="video/mp4" 
         media="(max-width: 768px)">
     <!-- Фолбэк-контент для старых браузеров -->

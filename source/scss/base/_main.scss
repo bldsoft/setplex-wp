@@ -81,7 +81,7 @@ section.no-top-indent {
   }
 
   @include respond-to(desktop) {
-    max-width: 800px;
+    max-width: 810px;
     font-size: 54px;
     line-height: 70px;
   }
@@ -99,12 +99,36 @@ section.no-top-indent {
   line-height: 28px;
 }
 
+.heading-h2-center,
+.heading-h2-left {
+  margin: 0 0 10px;
+  color: cnfg.$white;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+
+  @include respond-to(tablet) {
+    font-size: 48px;
+    line-height: 62px;
+  }
+}
+
+.heading-h2-center {
+  text-align: center;
+}
+
+.heading-h2-left {
+  text-align: left;
+}
+
 hr {
   width: 100%;
   height: 1px;
   border: 0;
   margin: 0;
-  background-color: cnfg.$brand-blue;
+
+  // background-color: cnfg.$brand-blue;
+  background-color: var(--color);
 }
 
 .arrow-angle-white {
@@ -125,29 +149,4 @@ hr {
     background-size: 100%;
     content: "";
   }
-}
-
-.color-nora {
-  border-color: cnfg.$brand-nora;
-  color: cnfg.$brand-nora;
-}
-
-.color-setrix {
-  border-color: cnfg.$brand-setrix;
-  color: cnfg.$brand-setrix;
-}
-
-.color-streampool {
-  border-color: cnfg.$brand-streampool;
-  color: cnfg.$brand-streampool;
-}
-
-.color-analytics {
-  border-color: cnfg.$brand-analytics;
-  color: cnfg.$brand-analytics;
-}
-
-.color-norago {
-  border-color: cnfg.$brand-norago;
-  color: cnfg.$brand-norago;
 }

@@ -1,0 +1,78 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.headline-with-buttons {
+  display: flex;
+  min-height: 200px;
+  align-items: center;
+  padding: 0 20px;
+
+  @include respond-to(desktop) {
+    min-height: 280px;
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .page-color-btn {
+      border: 1px solid currentcolor;
+      background-color: currentcolor;
+      color: inherit;
+      text-decoration: none;
+      transition:
+        border cnfg.$transition3,
+        background-color cnfg.$transition3;
+
+      .page-type-norago & {
+        border: 0;
+        background: linear-gradient(
+          119deg,
+          #fb5657 9%,
+          #27609c 55%,
+          #27609c 90%
+        );
+        background-size: 150% auto;
+        transition: background-position cnfg.$transition3;
+      }
+
+      span {
+        color: cnfg.$white;
+      }
+
+      &:hover {
+        .page-type-nora & {
+          border: 1px solid cnfg.$brand-nora-hover;
+          background-color: cnfg.$brand-nora-hover;
+        }
+
+        .page-type-setrix & {
+          border: 1px solid cnfg.$brand-setrix-hover;
+          background-color: cnfg.$brand-setrix-hover;
+        }
+
+        .page-type-streampool & {
+          border: 1px solid cnfg.$brand-streampool-hover;
+          background-color: cnfg.$brand-streampool-hover;
+        }
+
+        .page-type-analytix & {
+          border: 1px solid cnfg.$brand-analytix-hover;
+          background-color: cnfg.$brand-analytix-hover;
+        }
+
+        .page-type-norago & {
+          background-position: right center;
+        }
+      }
+    }
+  }
+}
