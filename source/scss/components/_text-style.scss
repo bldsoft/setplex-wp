@@ -1,21 +1,76 @@
 @use "../base/config" as cnfg;
 @use "../base/sizes" as *;
 
-.list-analytix-style {
+.list-nora-style {
   li {
-    position: relative;
     padding-left: 25px;
     margin: 2px 0;
   }
 
   li::before {
+    content: url("/img/icons/icon-nav-ic-1.svg");
+  }
+}
+
+.list-setrix-style {
+  li {
+    padding-left: 25px;
+    margin: 2px 0;
+  }
+
+  li::before {
+    content: url("/img/icons/icon-nav-ic-2.svg");
+  }
+}
+
+.list-streampool-style {
+  li {
+    padding-left: 25px;
+    margin: 2px 0;
+  }
+
+  li::before {
+    content: url("/img/icons/icon-nav-ic-3.svg");
+  }
+}
+
+.list-analytix-style {
+  li {
+    padding-left: 20px;
+  }
+
+  li::before {
+    content: url("/img/icons/icon-nav-ic-4.svg");
+  }
+}
+
+.list-norago-style {
+  li {
+    padding-left: 25px;
+  }
+
+  li::before {
+    content: url("/img/icons/icon-nav-ic-6.svg");
+  }
+}
+
+.list-nora-style,
+.list-setrix-style,
+.list-streampool-style,
+.list-analytix-style,
+.list-norago-style {
+  li {
+    position: relative;
+    margin: 5px 0;
+  }
+
+  li::before {
     position: absolute;
     top: 2px;
-    left: 6px;
+    left: 0;
     display: inline-block;
     width: 15px;
     margin-right: 8px;
-    content: url("/img/icons/icon-nav-ic-4.svg");
     text-align: center;
   }
 }
