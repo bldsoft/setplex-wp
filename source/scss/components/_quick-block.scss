@@ -1,0 +1,9 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.quick-block {
+  display: flex;
+  min-height: 215px;
+  align-items: center;
+  padding: 0 20px;
+}

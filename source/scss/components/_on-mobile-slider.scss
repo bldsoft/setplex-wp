@@ -16,7 +16,7 @@
     border: 2px solid #363636;
     border-radius: 50%;
     background: none;
-    font-weight: 600;
+    font-weight: cnfg.$font-weight6;
 
     &::before {
       color: cnfg.$brand-blue;

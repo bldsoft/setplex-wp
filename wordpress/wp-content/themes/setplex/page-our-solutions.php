@@ -13,7 +13,7 @@ get_header();
 <!-- ID Main page 107 -->
 <section class="pentagon-section no-top-indent">
   <div class="pentagon-inner grd-inner">
-    <h2 class="heading-left head-gradient"><?php the_field('pentagon_title', 107); ?></h2>
+    <h1 class="heading-left head-gradient"><?php the_field('pentagon_title', 107); ?></h1>
     <ul class="pentagon-list on-solutions-slider">
       <?php while( have_rows('pentagon_list', 107) ): the_row(); ?>
         <li class="pentagon-list-item w-33 color-<?php the_sub_field('class'); ?>">
