@@ -1,0 +1,215 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+// map component
+.map {
+  &-section {
+    overflow: hidden;
+    padding: 0 20px;
+  }
+
+  &-block {
+    position: relative;
+    display: inline-block;
+
+    > img {
+      width: calc(100% + 48%);
+      max-width: unset;
+      height: auto;
+      margin-right: -25%;
+      margin-left: -23%;
+
+      // @include respond-to(mobile-xl) {
+      //   width: calc(100% + 300px);
+      //   margin-right: -150px;
+      //   margin-left: -150px;
+      // }
+
+      @include respond-to(tablet) {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &-dots-item-text {
+    position: relative;
+    z-index: 5;
+    display: none;
+    height: 34px;
+    align-items: center;
+    padding: 0 10px 0 43px;
+    border: 1px solid cnfg.$brand-blue;
+    border-radius: 16px;
+    margin-left: -43px;
+    backdrop-filter: blur(2px);
+    color: cnfg.$white;
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  &-dots-item {
+    position: absolute;
+    height: 34px;
+    padding-left: 43px;
+
+    &.map-dot-new-york {
+      top: 32%;
+      left: 10%;
+
+      @include respond-to(mobile-xl) {
+        top: 36%;
+      }
+
+      @include respond-to(tablet) {
+        top: 35%;
+        left: 24%;
+      }
+
+      &::before {
+        top: 1px;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        background-image: url("/img/icons/icon-contact-hq.webp");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        content: "";
+      }
+
+      .map-dots-item-text {
+        height: 50px;
+        padding: 0 10px 0 55px;
+        margin-left: -45px;
+      }
+    }
+
+    &.map-dot-hong-kong {
+      top: 52%;
+      left: 94%;
+      padding: 0 43px 0 0;
+
+      @include respond-to(tablet) {
+        left: 77%;
+      }
+
+      .map-dots-item-text {
+        position: absolute;
+        top: 0;
+        right: 9px;
+        width: 180px;
+        padding: 0 40px 0 15px;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      padding: 8px;
+      border: 1px solid cnfg.$white;
+      border-radius: 50%;
+      backdrop-filter: blur(2px);
+      content: url("/img/icons/icon-nav-ic.svg");
+      text-align: center;
+    }
+
+    &:hover {
+      .map-dots-item-text {
+        display: flex;
+      }
+
+      &::before {
+        z-index: 10;
+      }
+    }
+  }
+
+  &-dot {
+    &-costa-rica {
+      // top: 56%;
+      // left: 16%;
+
+      top: 57%;
+      left: 12%;
+
+      @include respond-to(tablet) {
+        left: 21%;
+      }
+    }
+
+    &-minsk {
+      top: 30%;
+      left: 56%;
+
+      @include respond-to(tablet) {
+        left: 54%;
+      }
+    }
+
+    &-atlanta {
+      top: 45%;
+      left: 12%;
+
+      // top: 47%;
+      // left: 17%;
+
+      @include respond-to(tablet) {
+        top: 44%;
+        left: 22%;
+      }
+    }
+
+    &-warsaw {
+      top: 35%;
+      left: 51%;
+
+      // top: 34%;
+      // left: 49%;
+
+      @include respond-to(tablet) {
+        left: 52%;
+      }
+    }
+
+    &-cadiz {
+      top: 43%;
+      left: 41%;
+
+      // top: 44%;
+      // left: 42%;
+
+      @include respond-to(tablet) {
+        left: 44%;
+      }
+    }
+
+    &-miami {
+      top: 52%;
+      left: 16%;
+
+      // top: 53%;
+      // left: 20%;
+
+      @include respond-to(tablet) {
+        top: 47%;
+        left: 24%;
+      }
+    }
+
+    &-uk {
+      top: 31%;
+      left: 43%;
+
+      @include respond-to(tablet) {
+        left: 45%;
+      }
+    }
+  }
+}
