@@ -9,11 +9,12 @@
   }
 
   &-inner {
-    overflow: hidden;
+    position: relative;
   }
 
   &-list {
     display: block;
+    overflow: hidden;
     margin: 30px 0 0 -16px;
 
     @include respond-to(desktop) {
@@ -36,6 +37,8 @@
     }
 
     &-content {
+      position: relative;
+      z-index: 10;
       display: flex;
       height: 100%;
       flex-direction: column;
@@ -43,6 +46,7 @@
       border: 1px solid cnfg.$brand-blue;
       border-radius: cnfg.$border-radius15;
       margin: 0 16px;
+      background: linear-gradient(208deg, #050505 2.77%, #000 96.54%);
       gap: 10px;
     }
 

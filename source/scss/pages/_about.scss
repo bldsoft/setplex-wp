@@ -1,0 +1,72 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.page-template-page-about {
+  .dragonfly-section {
+    overflow: hidden;
+  }
+
+  .photo-carousel-section {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 100px;
+  }
+
+  .numbering-tile-section {
+    overflow: hidden;
+
+    .plain-text:last-child {
+      margin: 140px auto 85px;
+    }
+  }
+
+  .news-section {
+    margin-top: 80px;
+  }
+}
+
+.beauty-el {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: "";
+  }
+
+  @include respond-to(desktop) {
+    &-1::before {
+      top: 1px;
+      left: -60px;
+      width: 1263px;
+      height: 223px;
+      background-image: url("/img/icons/bg-about-line-1.svg");
+    }
+
+    &-2::before {
+      top: -50px;
+      right: 60px;
+      width: 1100px;
+      height: 242px;
+      background-image: url("/img/icons/bg-about-line-2.svg");
+    }
+
+    &-3::before {
+      top: 1px;
+      left: -60px;
+      width: 1000px;
+      height: 180px;
+      background-image: url("/img/icons/bg-about-line-1.svg");
+    }
+
+    &-4::before {
+      top: -35px;
+      right: -48px;
+      width: 1250px;
+      height: 272px;
+      background-image: url("/img/icons/bg-about-line-2.svg");
+    }
+  }
+}

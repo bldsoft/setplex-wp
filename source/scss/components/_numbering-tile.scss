@@ -1,0 +1,76 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.numbering-tile {
+  &-section {
+    padding: 0 20px;
+  }
+
+  &-inner {
+    position: relative;
+    z-index: 10;
+  }
+
+  &-list {
+    display: flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto 40px;
+    row-gap: 16px;
+
+    @include respond-to(desktop) {
+      max-width: unset;
+      flex-wrap: nowrap;
+      margin: 30px -8px 40px;
+      row-gap: 0;
+    }
+  }
+
+  &-list-item {
+    height: auto;
+    flex: 1 0 auto;
+
+    &.w-25 {
+      width: 100%;
+
+      @include respond-to(mobile-xl) {
+        width: 50%;
+      }
+
+      @include respond-to(desktop) {
+        width: 25%;
+      }
+    }
+
+    &-content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      padding: 38px 5px;
+      border: 1px solid cnfg.$brand-blue;
+      border-radius: cnfg.$border-radius15;
+      margin: 0 8px;
+      background: linear-gradient(208deg, #050505 3%, cnfg.$black 97%);
+      gap: 10px;
+    }
+
+    &-title {
+      background: linear-gradient(95deg, cnfg.$brand-blue 4%, #054368 60%);
+      background-clip: text;
+      font-size: 50px;
+      font-weight: cnfg.$font-weight7;
+      line-height: 65px;
+      text-align: center;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-text {
+      color: cnfg.$white;
+      font-size: 18px;
+      font-weight: cnfg.$font-weight7;
+      line-height: 129%;
+      text-align: center;
+    }
+  }
+}

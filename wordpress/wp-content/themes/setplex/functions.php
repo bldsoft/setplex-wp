@@ -169,9 +169,23 @@ function setplex_scripts(){
 	// additional js
 	wp_enqueue_script( 'slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true );
 
+	// fancybox
+	if (get_page_template_slug() === 'page-about.php') {
+		wp_enqueue_style('fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
+    wp_enqueue_script('fancybox-js', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array('jquery'), null, true);
+		add_filter('script_loader_tag', function ($tag, $handle) {
+			if ($handle === 'fancybox-js') {
+					return str_replace('<script ', '<script type="module" ', $tag);
+			}
+			return $tag;
+	}, 10, 2);
+	}
+
 	if (is_front_page()) {
 		wp_enqueue_style('front-page-style', $css_front_url, array(), filemtime($css_front_file), 'all' );
 	}
+
+	// styles / scripts to other pages
 	require get_template_directory() . '/inc/styles-to-pages.php';
 }
 add_action( 'wp_enqueue_scripts', 'setplex_scripts' );

@@ -8,6 +8,8 @@ $css_bad_file = get_template_directory() . '/css/book-a-demo.min.css';
 $css_bad_url = get_template_directory_uri().'/css/book-a-demo.min.css';
 $css_contact_file = get_template_directory() . '/css/contact-us.min.css';
 $css_contact_url = get_template_directory_uri().'/css/contact-us.min.css';
+$css_about_file = get_template_directory() . '/css/about.min.css';
+$css_about_url = get_template_directory_uri().'/css/about.min.css';
 
 if (get_page_template_slug() === 'page-our-solutions.php') {
   wp_enqueue_style('our-solutions-style', $css_our_solutions_url, array(), filemtime($css_our_solutions_file), 'all' );
@@ -20,4 +22,7 @@ if (get_page_template_slug() === 'page-book-a-demo.php') {
 }
 if (get_page_template_slug() === 'page-contact-us.php') {
   wp_enqueue_style('contact-us-style', $css_contact_url, array(), filemtime($css_contact_file), 'all' );
+}
+if (get_page_template_slug() === 'page-about.php') {
+  wp_enqueue_style('about-style', $css_about_url, array(), filemtime($css_about_file), 'all' );
 }
