@@ -1,0 +1,20 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.page-template-page-customer-support {
+  .heading-left {
+    max-width: unset;
+  }
+
+  .dragonfly-section {
+    margin-bottom: 100px;
+  }
+
+  .quote-section {
+    margin: 100px 0 0;
+  }
+
+  .quote-section + .fifty-percent-section {
+    margin-bottom: 100px;
+  }
+}

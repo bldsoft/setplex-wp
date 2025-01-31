@@ -10,6 +10,10 @@ $css_contact_file = get_template_directory() . '/css/contact-us.min.css';
 $css_contact_url = get_template_directory_uri().'/css/contact-us.min.css';
 $css_about_file = get_template_directory() . '/css/about.min.css';
 $css_about_url = get_template_directory_uri().'/css/about.min.css';
+$css_partners_file = get_template_directory() . '/css/partners.min.css';
+$css_partners_url = get_template_directory_uri().'/css/partners.min.css';
+$css_support_file = get_template_directory() . '/css/support.min.css';
+$css_support_url = get_template_directory_uri().'/css/support.min.css';
 
 if (get_page_template_slug() === 'page-our-solutions.php') {
   wp_enqueue_style('our-solutions-style', $css_our_solutions_url, array(), filemtime($css_our_solutions_file), 'all' );
@@ -25,4 +29,10 @@ if (get_page_template_slug() === 'page-contact-us.php') {
 }
 if (get_page_template_slug() === 'page-about.php') {
   wp_enqueue_style('about-style', $css_about_url, array(), filemtime($css_about_file), 'all' );
+}
+if (get_page_template_slug() === 'page-partners.php') {
+  wp_enqueue_style('partners-style', $css_partners_url, array(), filemtime($css_partners_file), 'all' );
+}
+if (get_page_template_slug() === 'page-customer-support.php') {
+  wp_enqueue_style('support-style', $css_support_url, array(), filemtime($css_support_file), 'all' );
 }

@@ -51,7 +51,11 @@
       border: 1px solid cnfg.$brand-blue;
       border-radius: cnfg.$border-radius15;
       margin: 0 8px;
-      background: linear-gradient(208deg, #050505 3%, cnfg.$black 97%);
+      background: linear-gradient(
+        208deg,
+        cnfg.$brand-dark2 3%,
+        cnfg.$black 97%
+      );
       gap: 10px;
     }
 

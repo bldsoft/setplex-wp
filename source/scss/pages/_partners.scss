@@ -1,0 +1,12 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.page-template-page-partners {
+  .logo-pyramid-section {
+    margin-top: 50px;
+  }
+
+  .quote-section + .dragonfly-section {
+    margin-top: 0;
+  }
+}

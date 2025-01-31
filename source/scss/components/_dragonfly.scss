@@ -19,7 +19,7 @@
 
     @include respond-to(desktop) {
       display: flex;
-      margin: 30px -16px 40px;
+      margin: 30px -16px 0;
     }
   }
 
@@ -46,7 +46,11 @@
       border: 1px solid cnfg.$brand-blue;
       border-radius: cnfg.$border-radius15;
       margin: 0 16px;
-      background: linear-gradient(208deg, #050505 2.77%, #000 96.54%);
+      background: linear-gradient(
+        208deg,
+        cnfg.$brand-dark2 2.77%,
+        cnfg.$black 96.54%
+      );
       gap: 10px;
     }
 
@@ -62,7 +66,9 @@
       line-height: 23px;
 
       @include respond-to(desktop) {
-        min-height: 50px;
+        &.h50 {
+          min-height: 50px;
+        }
       }
     }
 
@@ -71,5 +77,38 @@
       font-weight: cnfg.$font-weight4;
       line-height: 25px;
     }
+  }
+}
+
+.no-mobile-slider {
+  &.dragonfly-list {
+    margin: 30px 0 0;
+
+    @include respond-to(mobile-xl) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    @include respond-to(desktop) {
+      margin: 30px -16px 0;
+    }
+  }
+
+  .dragonfly-list-item {
+    width: 100%;
+
+    @include respond-to(mobile-xl) {
+      width: calc(50% - 10px);
+    }
+
+    @include respond-to(tablet) {
+      max-width: 280px;
+    }
+  }
+
+  .dragonfly-list-item-content {
+    margin: 0 0 20px;
   }
 }

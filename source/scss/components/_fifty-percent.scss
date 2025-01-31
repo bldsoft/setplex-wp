@@ -1,0 +1,108 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.fifty-percent {
+  &-section {
+    padding: 0 20px;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    gap: 25px;
+
+    @include respond-to(desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &-list-item {
+    width: 100%;
+    flex: 1 0 auto;
+    padding: 25px 21px;
+    border: 1px solid cnfg.$brand-blue;
+    border-radius: 15px;
+    background-color: cnfg.$brand-dark2;
+    color: cnfg.$white;
+
+    @include respond-to(desktop) {
+      max-width: calc(50% - 10px);
+    }
+
+    .with-links & {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+
+      @include respond-to(mobile-xl) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+      }
+    }
+  }
+
+  &-list-item-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+  }
+
+  &-list-item-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+
+    .with-links & {
+      color: cnfg.$light-gray;
+      font-weight: cnfg.$font-weight4;
+    }
+  }
+
+  &-list-item-link {
+    position: relative;
+    padding-left: 30px;
+    color: cnfg.$brand-blue;
+    font-size: 16px;
+    font-weight: cnfg.$font-weight7;
+    line-height: 24px;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  &-list-item-login,
+  &-list-item-contact {
+    &::before {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      display: block;
+      width: 19px;
+      height: 19px;
+      margin-right: 10px;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+    }
+  }
+
+  &-list-item-login {
+    &::before {
+      background-image: url("/img/icons/icon-contact-login.svg");
+    }
+  }
+
+  &-list-item-contact {
+    &::before {
+      background-image: url("/img/icons/icon-contact-email.svg");
+    }
+  }
+}

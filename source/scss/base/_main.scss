@@ -121,6 +121,32 @@ section.no-top-indent {
   text-align: left;
 }
 
+.heading-h3-center {
+  text-align: center;
+}
+
+.heading-h3-left {
+  text-align: left;
+}
+
+.heading-h3-center,
+.heading-h3-left {
+  margin: 0 0 10px;
+  color: cnfg.$white;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+
+  @include respond-to(tablet) {
+    font-size: 32px;
+    line-height: 41px;
+  }
+
+  .subheading-left & {
+    margin-top: 70px;
+  }
+}
+
 .plain-text {
   font-size: 20px;
   font-weight: cnfg.$font-weight4;

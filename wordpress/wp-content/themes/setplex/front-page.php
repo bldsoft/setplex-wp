@@ -59,7 +59,7 @@ get_header();
               <?php $image = get_sub_field('icon'); ?>
               <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
             </div>
-            <div class="dragonfly-list-item-title"><?php the_sub_field('title'); ?></div>
+            <div class="dragonfly-list-item-title h50"><?php the_sub_field('title'); ?></div>
             <div class="dragonfly-list-item-text"><?php the_sub_field('text'); ?></div>
           </div>
         </li>
@@ -105,7 +105,7 @@ get_header();
               <?php $image = get_sub_field('icon'); ?>
               <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
             </div>
-            <div class="dragonfly-list-item-title"><?php the_sub_field('title'); ?></div>
+            <div class="dragonfly-list-item-title h50"><?php the_sub_field('title'); ?></div>
             <div class="dragonfly-list-item-text"><?php the_sub_field('text'); ?></div>
           </div>
         </li>
