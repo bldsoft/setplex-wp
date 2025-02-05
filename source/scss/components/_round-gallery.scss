@@ -1,0 +1,72 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.round-gallery {
+  &-section {
+    padding: 0 20px;
+  }
+
+  &-list {
+    display: flex;
+    max-width: 920px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 80px auto;
+    gap: 30px;
+  }
+
+  &-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-list-item-image {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background:
+      linear-gradient(208deg, cnfg.$brand-dark2 2.77%, cnfg.$black 96.54%)
+        padding-box,
+      linear-gradient(70deg, cnfg.$brand-blue, cnfg.$black) border-box;
+  }
+
+  &-list-item-text {
+    display: flex;
+    gap: 14px;
+  }
+
+  &-list-item-link {
+    position: relative;
+    padding-left: 22px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin-top: -11px;
+      margin-right: 10px;
+      background-image: url("/img/content/logo-linkedin-color.svg");
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+    }
+  }
+
+  &-list-item-person {
+    color: #fff;
+
+    &-name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &-job-title {
+      font-style: italic;
+    }
+  }
+}

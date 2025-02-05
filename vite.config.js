@@ -45,6 +45,7 @@ export default defineConfig({
         'about': path.resolve(__dirname, 'source/scss/about.scss'),
         'partners': path.resolve(__dirname, 'source/scss/partners.scss'),
         'support': path.resolve(__dirname, 'source/scss/support.scss'),
+        'leadership': path.resolve(__dirname, 'source/scss/leadership.scss'),
       },
       output: {
         entryFileNames: 'js/[name].min.js', // for JS-files
