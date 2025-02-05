@@ -165,6 +165,10 @@ hr {
 
   // background-color: cnfg.$brand-blue;
   background-color: var(--color);
+
+  &.blue {
+    background-color: cnfg.$brand-blue;
+  }
 }
 
 .arrow-angle-white {

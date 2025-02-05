@@ -11,6 +11,8 @@
 
 ?>
 
+<hr class="blue">
+
 		<footer class="footer" style="background:#000;">
 			<div class="footer-inner grd-inner">
 				<div class="footer-top">
