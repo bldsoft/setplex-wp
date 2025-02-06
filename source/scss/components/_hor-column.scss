@@ -1,0 +1,66 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.hor-column {
+  &-section {
+    padding: 0 20px;
+  }
+
+  &-list {
+    display: block;
+    margin: 25px 0 0;
+
+    @include respond-to(tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &-list-item {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding: 28px 15px;
+    border: 1px solid cnfg.$brand-blue;
+    border-radius: 15px;
+    margin: 5px 15px 3px 0;
+    background:
+      linear-gradient(208deg, cnfg.$brand-dark2 3%, cnfg.$black 96%) padding-box,
+      linear-gradient(45deg, cnfg.$brand-blue, cnfg.$black) border-box;
+    gap: 10px;
+
+    @include respond-to(tablet) {
+      margin: 0;
+    }
+  }
+
+  &-list-item-icon {
+    flex-shrink: 0;
+    padding: 16px 25px;
+
+    img {
+      min-width: 65px;
+    }
+  }
+
+  &-list-item-content {
+    display: flex;
+    flex-direction: column;
+    color: cnfg.$white;
+    gap: 12px;
+  }
+
+  &-list-item-title {
+    font-size: 18px;
+    font-weight: cnfg.$font-weight7;
+    line-height: 23px;
+  }
+
+  &-list-item-text {
+    font-size: 14px;
+    font-weight: cnfg.$font-weight5;
+    line-height: 22px;
+  }
+}

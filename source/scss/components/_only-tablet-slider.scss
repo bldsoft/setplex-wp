@@ -1,0 +1,72 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.only-tablet-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0 0 -13px;
+  row-gap: 27px;
+
+  @include respond-to(tablet) {
+    display: block;
+  }
+
+  @include respond-to(desktop) {
+    display: flex;
+    margin: 30px -13px 0;
+  }
+
+  &-item {
+    max-width: 410px;
+    height: auto;
+    flex: 1 0 auto;
+
+    &.w-33 {
+      width: 100%;
+
+      @include respond-to(desktop) {
+        width: 33%;
+      }
+    }
+
+    &-content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      padding: 30px;
+      border: 1px solid currentcolor;
+      border-radius: cnfg.$border-radius15;
+      margin: 0 13px;
+      gap: 10px;
+    }
+
+    &-icon {
+      margin: 0 -20px 10px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    &-title {
+      color: cnfg.$white;
+      font-size: 18px;
+      font-weight: cnfg.$font-weight7;
+      line-height: 25px;
+
+      @include respond-to(desktop) {
+        &.h50 {
+          min-height: 50px;
+        }
+      }
+    }
+
+    &-text {
+      color: cnfg.$white;
+      font-size: 14px;
+      font-weight: cnfg.$font-weight4;
+      line-height: 22px;
+    }
+  }
+}

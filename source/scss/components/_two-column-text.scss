@@ -1,0 +1,54 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.two-column-text {
+  padding: 0 20px;
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &-head {
+    display: flex;
+    flex-direction: column;
+    color: cnfg.$white;
+    gap: 30px;
+
+    @include respond-to(desktop) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &-heading {
+    flex: 1 0 auto;
+    font-size: 32px;
+    font-weight: cnfg.$font-weight7;
+    line-height: 42px;
+
+    @include respond-to(tablet) {
+      font-size: 48px;
+      line-height: 62px;
+    }
+
+    @include respond-to(desktop) {
+      max-width: 48%;
+      font-size: 64px;
+      line-height: 82px;
+    }
+  }
+
+  &-text {
+    flex: 1 0 auto;
+    font-size: 18px;
+    font-weight: cnfg.$font-weight4;
+    line-height: 25px;
+    text-align: justify;
+
+    @include respond-to(desktop) {
+      max-width: 48%;
+    }
+  }
+}

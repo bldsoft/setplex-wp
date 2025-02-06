@@ -16,6 +16,8 @@ $css_support_file = get_template_directory() . '/css/support.min.css';
 $css_support_url = get_template_directory_uri().'/css/support.min.css';
 $css_leadership_file = get_template_directory() . '/css/leadership.min.css';
 $css_leadership_url = get_template_directory_uri().'/css/leadership.min.css';
+$css_careers_file = get_template_directory() . '/css/careers.min.css';
+$css_careers_url = get_template_directory_uri().'/css/careers.min.css';
 
 if (get_page_template_slug() === 'page-our-solutions.php') {
   wp_enqueue_style('our-solutions-style', $css_our_solutions_url, array(), filemtime($css_our_solutions_file), 'all' );
@@ -40,4 +42,7 @@ if (get_page_template_slug() === 'page-customer-support.php') {
 }
 if (get_page_template_slug() === 'page-leadership.php') {
   wp_enqueue_style('leadership-style', $css_leadership_url, array(), filemtime($css_leadership_file), 'all' );
+}
+if (get_page_template_slug() === 'page-careers.php') {
+  wp_enqueue_style('careers-style', $css_careers_url, array(), filemtime($css_careers_file), 'all' );
 }

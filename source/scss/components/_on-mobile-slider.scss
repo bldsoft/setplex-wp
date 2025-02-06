@@ -1,6 +1,8 @@
 @use "../base/config" as cnfg;
+@use "../base/sizes" as *;
 
-.on-mobile-slider.slick-slider {
+.on-mobile-slider.slick-slider,
+.only-tablet-slider.slick-slider {
   padding-bottom: 110px;
 
   .slick-track {
@@ -41,6 +43,7 @@
 }
 
 .on-mobile-slider-no-arrow.slick-slider,
+.only-tablet-slider.slick-slider,
 .on-solutions-slider.slick-slider {
   .slick-track {
     display: flex;
