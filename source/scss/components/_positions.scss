@@ -1,0 +1,77 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.positions {
+  &-list {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    margin: 25px auto;
+    gap: 25px;
+  }
+
+  &-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border: 1px solid currentcolor;
+    border-radius: 15px;
+
+    &-link {
+      color: cnfg.$white;
+      font-size: 20px;
+      font-weight: cnfg.$font-weight6;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 15px;
+    border-top: 1px solid #28282d;
+    margin: 0 auto;
+    background: linear-gradient(208deg, cnfg.$brand-dark2 3%, cnfg.$black 96%);
+    gap: 10px;
+
+    @include respond-to(tablet) {
+      max-width: 800px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-text {
+      color: cnfg.$white;
+      font-size: 18px;
+      font-weight: cnfg.$font-weight5;
+      text-align: center;
+
+      @include respond-to(tablet) {
+        max-width: 420px;
+        text-align: left;
+      }
+
+      p {
+        margin-bottom: 12px;
+      }
+
+      strong {
+        font-weight: cnfg.$font-weight7;
+      }
+    }
+
+    button {
+      flex-shrink: 0;
+      padding: 8px 24px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+}
