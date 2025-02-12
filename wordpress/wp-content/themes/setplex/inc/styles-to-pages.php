@@ -20,6 +20,8 @@ $css_careers_file = get_template_directory() . '/css/careers.min.css';
 $css_careers_url = get_template_directory_uri().'/css/careers.min.css';
 $css_careers_inner_file = get_template_directory() . '/css/careers-inner.min.css';
 $css_careers_inner_url = get_template_directory_uri().'/css/careers-inner.min.css';
+$css_careers_vacancy_file = get_template_directory() . '/css/careers-vacancy.min.css';
+$css_careers_vacancy_url = get_template_directory_uri().'/css/careers-vacancy.min.css';
 
 if (get_page_template_slug() === 'page-our-solutions.php') {
   wp_enqueue_style('our-solutions-style', $css_our_solutions_url, array(), filemtime($css_our_solutions_file), 'all' );
@@ -50,4 +52,7 @@ if (get_page_template_slug() === 'page-careers.php') {
 }
 if (get_page_template_slug() === 'page-careers-inner.php') {
   wp_enqueue_style('careers-inner-style', $css_careers_inner_url, array(), filemtime($css_careers_inner_file), 'all' );
+}
+if (get_page_template_slug() === 'page-careers-vacancy.php') {
+  wp_enqueue_style('careers-vacancy-style', $css_careers_vacancy_url, array(), filemtime($css_careers_vacancy_file), 'all' );
 }

@@ -48,6 +48,7 @@ export default defineConfig({
         'leadership': path.resolve(__dirname, 'source/scss/leadership.scss'),
         'careers': path.resolve(__dirname, 'source/scss/careers.scss'),
         'careers-inner': path.resolve(__dirname, 'source/scss/careers-inner.scss'),
+        'careers-vacancy': path.resolve(__dirname, 'source/scss/careers-vacancy.scss'),
       },
       output: {
         entryFileNames: 'js/[name].min.js', // for JS-files

@@ -18,3 +18,174 @@
     margin-top: 80px;
   }
 }
+
+// Vacancy page
+.content-style-wbg {
+  color: #121212;
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 16px;
+    font-weight: cnfg.$font-weight7;
+  }
+
+  strong,
+  b {
+    font-weight: cnfg.$font-weight7;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  p,
+  li {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  li li {
+    margin-bottom: 0;
+  }
+
+  ol {
+    padding-left: 20px;
+    margin-top: 10px;
+
+    li {
+      list-style-type: decimal;
+
+      &::marker {
+        font-weight: cnfg.$font-weight6;
+      }
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 10px;
+
+    li {
+      list-style-type: disc;
+
+      &::marker {
+        color: cnfg.$brand-blue;
+      }
+    }
+  }
+}
+
+.page-template-page-careers-vacancy {
+  .vacancy {
+    &-btn {
+      min-height: 40px;
+      padding: 8px 58px;
+      margin: auto;
+
+      @include respond-to(tablet) {
+        margin: 0;
+      }
+    }
+
+    &-head {
+      display: flex;
+      width: 100%;
+      min-height: 340px;
+      padding: 0 20px;
+      margin-bottom: 45px;
+      background-color: cnfg.$brand-blue;
+
+      @include respond-to(tablet) {
+        background-color: cnfg.$white;
+        background-image: url("https://setplex.com/test/wp-content/themes/setplex/img/content/vacancy-bg-head.webp");
+        background-position: center top;
+        background-repeat: no-repeat;
+      }
+
+      &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+
+        @include respond-to(tablet) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          text-align: unset;
+        }
+      }
+    }
+
+    &-title {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      color: cnfg.$white;
+      font-size: 36px;
+      font-weight: cnfg.$font-weight6;
+      line-height: 46px;
+
+      @include respond-to(tablet) {
+        margin: 0;
+        font-size: 48px;
+        line-height: 62px;
+      }
+    }
+
+    &-cta {
+      &-ss-list {
+        justify-content: center;
+        margin-top: 25px;
+        gap: 5px;
+
+        a {
+          color: cnfg.$white;
+
+          @include respond-to(tablet) {
+            color: currentcolor;
+          }
+        }
+      }
+
+      .blue-btn {
+        border: 1px solid cnfg.$white;
+
+        @include respond-to(tablet) {
+          border: 1px solid currentcolor;
+        }
+      }
+    }
+
+    &-body {
+      padding: 0 20px;
+
+      button {
+        margin: 40px auto;
+      }
+    }
+
+    &-afterwords {
+      margin: 40px auto;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
