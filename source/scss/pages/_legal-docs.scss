@@ -1,0 +1,102 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.legal-docs {
+  padding: 0 20px;
+  margin-top: 80px;
+
+  &-inner {
+    margin-bottom: 50px;
+  }
+
+  &-content {
+    margin: 20px 0 30px;
+    color: cnfg.$white3;
+    font-size: 16px;
+    font-weight: cnfg.$font-weight4;
+    line-height: 24px;
+
+    a {
+      color: cnfg.$brand-blue;
+      text-decoration: none;
+      transition: color cnfg.$transition3;
+
+      &:hover {
+        color: #20a0ec;
+      }
+    }
+
+    strong,
+    b {
+      font-weight: cnfg.$font-weight7;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    // list
+    p,
+    ol,
+    ul {
+      margin: 15px 0;
+    }
+
+    ol,
+    ul {
+      margin-left: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    ol {
+      padding-left: 20px;
+      list-style-type: decimal;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    // headings
+    h2,
+    h3,
+    h4 {
+      margin-top: 24px;
+      font-weight: cnfg.$font-weight5;
+      line-height: 1.5;
+      text-wrap: auto;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 22px;
+    }
+
+    // table
+    table {
+      max-width: 100%;
+    }
+
+    th,
+    td {
+      padding: 5px 10px;
+      border: 1px solid cnfg.$light-gray;
+
+      @include respond-to(tablet) {
+        padding: 5px 15px;
+      }
+    }
+  }
+}

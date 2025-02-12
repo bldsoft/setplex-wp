@@ -158,7 +158,11 @@
           color: cnfg.$white;
 
           @include respond-to(tablet) {
-            color: currentcolor;
+            color: cnfg.$brand-blue;
+
+            &:hover {
+              color: cnfg.$brand-blue-hover;
+            }
           }
         }
       }
@@ -167,7 +171,7 @@
         border: 1px solid cnfg.$white;
 
         @include respond-to(tablet) {
-          border: 1px solid currentcolor;
+          border: 1px solid cnfg.$brand-blue;
         }
       }
     }

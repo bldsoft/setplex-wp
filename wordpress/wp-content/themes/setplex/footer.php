@@ -11,7 +11,7 @@
 
 ?>
 
-<hr class="blue">
+		<hr class="blue b4-footer">
 
 		<footer class="footer" style="background:#000;">
 			<div class="footer-inner grd-inner">
