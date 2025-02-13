@@ -39,6 +39,7 @@ export default defineConfig({
         basecss: path.resolve(__dirname, 'source/scss/set-base.scss'),
         'legal-docs': path.resolve(__dirname, 'source/scss/legal-docs.scss'),
         '404': path.resolve(__dirname, 'source/scss/404.scss'),
+        'thank-you': path.resolve(__dirname, 'source/scss/thank-you.scss'),
         'front-page': path.resolve(__dirname, 'source/scss/front-page.scss'),
         'our-solutions': path.resolve(__dirname, 'source/scss/our-solutions.scss'),
         'solution': path.resolve(__dirname, 'source/scss/solution.scss'),
