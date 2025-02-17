@@ -1,0 +1,55 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+#my-modal {
+  &.modal {
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    padding: 20px;
+    border: 0;
+    margin: 0;
+    background-color: #fff;
+    box-shadow:
+      rgb(81 169 225 / 14%) 0 2px 4px,
+      rgb(81 169 225 / 12%) 0 4px 5px,
+      rgb(81 169 225 / 20%) 0 1px 10px;
+    overflow-y: auto;
+
+    @include respond-to(mobile) {
+      height: auto;
+      min-height: 300px;
+      border-radius: cnfg.$border-radius15;
+      margin: 10% auto;
+      overflow-y: unset;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: rgb(88 89 91 / 100%);
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

@@ -32,6 +32,8 @@ get_header();
       <button id="openModalBtn1" class="product-btn product-btn-brand blue-btn" type="button" aria-label="Send CV File" title="Send CV File"><?php the_field('button_text'); ?></button>
     </div>
 
+    <?php get_template_part( 'template-parts/modal', 'none' ); ?>
+
   </div>
 </section>
 

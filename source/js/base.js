@@ -7,3 +7,4 @@ import './components/only-tablet-slider.js';
 import './components/solution.js';
 import './components/photo-carousel.js';
 import './components/thank-you-timer.js';
+import './components/modal.js';
