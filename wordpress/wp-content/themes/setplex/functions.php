@@ -162,12 +162,16 @@ function setplex_scripts(){
 	wp_enqueue_style( 'base-style', $css_base_url, array(), filemtime($css_base_file), 'all' );
 	wp_enqueue_script( 'base-js', $js_base_url, array(), filemtime($js_base_file), true );
 
-	// additional css
+	// slick slider css
 	wp_enqueue_style( 'slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css', array(), '1.8.1' );
 	wp_enqueue_style( 'slick-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css', array('slick-css'), '1.8.1' );
 
-	// additional js
+	// slick slider js
 	wp_enqueue_script( 'slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true );
+
+	if (is_front_page()) {
+		wp_enqueue_style('front-page-style', $css_front_url, array(), filemtime($css_front_file), 'all' );
+	}
 
 	// fancybox
 	if (get_page_template_slug() === 'page-about.php') {
@@ -178,11 +182,17 @@ function setplex_scripts(){
 					return str_replace('<script ', '<script type="module" ', $tag);
 			}
 			return $tag;
-	}, 10, 2);
+		}, 10, 2);
 	}
 
-	if (is_front_page()) {
-		wp_enqueue_style('front-page-style', $css_front_url, array(), filemtime($css_front_file), 'all' );
+	// Forms
+	if (get_page_template_slug() === 'page-book-a-demo.php'
+			|| get_page_template_slug() === 'page-partners.php'
+			|| get_page_template_slug() === 'page-contact-us.php'
+		) {
+
+		// Parsley.js (Validation)
+		wp_enqueue_script('parsley', 'https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js', array('jquery'), null, true);
 	}
 
 	// styles / scripts to other pages
