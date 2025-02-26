@@ -1,0 +1,128 @@
+@use "../base/config" as cnfg;
+@use "../base/sizes" as *;
+
+.bad-heading-form {
+  margin-bottom: 30px;
+  color: cnfg.$white3;
+  font-size: 16px;
+  font-weight: cnfg.$font-weight4;
+  line-height: 24px;
+}
+
+.form {
+  &-plain {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &-policy {
+    color: cnfg.$light-gray;
+    font-size: 14px;
+    font-weight: cnfg.$font-weight4;
+    line-height: 24px;
+
+    a {
+      color: cnfg.$light-gray;
+      text-decoration: underline;
+      transition: color cnfg.$transition3;
+
+      &:hover,
+      &:active {
+        color: cnfg.$white3;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-btn {
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
+  }
+
+  &-input-group {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &-input-with-label {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    @include respond-to(tablet) {
+      width: 50%;
+    }
+
+    &.form-input-with-textarea {
+      width: 100%;
+    }
+
+    label {
+      margin-bottom: 6px;
+      color: cnfg.$white3;
+      font-size: 14px;
+      font-weight: cnfg.$font-weight4;
+      line-height: 24px;
+    }
+
+    input {
+      height: 56px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid cnfg.$light-gray2;
+      border-radius: cnfg.$border-radius6;
+      background: cnfg.$black2;
+      color: cnfg.$white;
+      font-size: 16px;
+
+      &:focus,
+      &:focus-visible {
+        border: 1.5px solid cnfg.$brand-blue;
+        background: cnfg.$black;
+        outline: 1.5px solid cnfg.$brand-blue;
+      }
+    }
+
+    select {
+      width: 100%;
+      height: 56px;
+      padding: 12px;
+      border: 1px solid cnfg.$light-gray2;
+      border-radius: 6px;
+      background: cnfg.$black2;
+      color: cnfg.$white;
+      font-size: 16px;
+
+      &:focus,
+      &:focus-visible {
+        border: 1.5px solid cnfg.$brand-blue;
+        outline: 1.5px solid cnfg.$brand-blue;
+      }
+    }
+  }
+}
+
+// phone
+/* stylelint-disable-next-line selector-class-pattern */
+.iti__country {
+  background-color: rgb(22 22 22);
+  color: #fff;
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  &.iti__highlight {
+    background-color: rgb(22 22 22 / 80%);
+  }
+}

@@ -193,6 +193,10 @@ function setplex_scripts(){
 
 		// Parsley.js (Validation)
 		wp_enqueue_script('parsley', 'https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js', array('jquery'), null, true);
+
+		// Country / Phone lib (intl-tel-input)
+		wp_enqueue_style( 'intl-tel-css', 'https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.min.css', array(), '19.5.6' );
+		wp_enqueue_script( 'intl-tel-js', 'https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js', array(), '19.5.6', true );
 	}
 
 	// styles / scripts to other pages
@@ -288,3 +292,13 @@ add_filter( 'acf/shortcode/allow_unsafe_html', function ( $allowed, $atts ) {
 add_filter( 'acf/the_field/allow_unsafe_html', function ( $allowed, $atts ) {
   return true;
 }, 10, 2 );
+
+//
+// Forms
+// Email notification
+function send_form_ajax_url() {
+	echo '<script>const ajaxUrl = "' . admin_url('admin-ajax.php') . '";</script>';
+}
+add_action('wp_head', 'send_form_ajax_url');
+
+require get_template_directory() . '/forms/email-notification.php';
